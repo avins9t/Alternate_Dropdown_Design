@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+}
+
+.navbar {
+    background-color: lightgrey;
+    height: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menuLinks {    
+    height: 3rem;
+    min-width: 5rem;
+    /* border: 0; */
+    background-color: lightgrey;
+    cursor: pointer;
+    color: grey;    
+}
+.dropdown.active > .menuLinks {
+    color: black;
+    /* font-weight: bold; */
+}
+
+.dropdown {
+    position: relative;
+}
+.dropdown.active > .menuLinks + .dropdown-menu{
+    opacity: 1;
+    top: calc(100% + 2rem);
+    pointer-events: auto;
+
+    transition: top 150ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: -2rem;
+    background: white;
+    height: max-content;
+    padding: 1rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2,max-content);
+    gap: 2rem;
+}
+
+.dropdown-links {
+    color: grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm > input {
+    margin-bottom: 0.5rem;
+}
